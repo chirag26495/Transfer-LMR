@@ -313,17 +313,17 @@ if modality == 'Flow':
     i3d.load_state_dict(torch.load('models/flow_imagenet.pt'))
 else:
     # # i3d = InceptionI3d(400, in_channels=3)
-    # i3d = InceptionI3d(400, in_channels=3, dropout_keep_prob=0.0)
-    # i3d.load_state_dict(torch.load('models/rgb_imagenet.pt'))
+    i3d = InceptionI3d(400, in_channels=3, dropout_keep_prob=0.0)
+    i3d.load_state_dict(torch.load('models/rgb_imagenet.pt'))
     
-    i3d = InceptionI3d(num_classes, in_channels=3, dropout_keep_prob=0.0)
-    # i3d = InceptionI3d(num_classes, in_channels=3)
-    i3d.load_state_dict(torch.load('work_dirs/saved_models/i3d_RGB_model_0.1lr_latelrsched_cRT_IB005.pt'))
+    #i3d = InceptionI3d(num_classes, in_channels=3, dropout_keep_prob=0.0)
+    ## i3d = InceptionI3d(num_classes, in_channels=3)
+    #i3d.load_state_dict(torch.load('work_dirs/saved_models/i3d_RGB_model_0.1lr_latelrsched_cRT_IB005.pt'))
     # i3d = InceptionI3d(11, in_channels=3)
     # i3d.load_state_dict(torch.load('work_dirs/saved_models/best_i3d_rgb_onHDD/i3d_flow_model_0.1lr_latelrsched_IB032.pt', map_location=device))
     print("RGB model loaded!")
 
-# i3d.replace_logits(num_classes)
+i3d.replace_logits(num_classes)
 
 
 #i3d.load_state_dict(torch.load('/ssd/models/000920.pt'))

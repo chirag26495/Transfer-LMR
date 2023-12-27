@@ -3,8 +3,10 @@
 ```bash
 git clone https://github.com/piergiaj/pytorch-i3d.git
 git clone https://github.com/chirag26495/Transfer-LMR.git
+mv pytorch-i3d/README.md pytorch-i3d/README_i3d.md 
 cp -r Transfer-LMR/* pytorch-i3d/
 cd pytorch-i3d/
+mkdir work_dirs/saved_models/
 ```
 
 ## Environment setup (for Python 3.10.5):
